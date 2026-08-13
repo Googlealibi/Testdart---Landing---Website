@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 // slower, four distinct screens that fully replace each other (not stacked
 // inputs sitting on top of every later step) — results hold almost to the
@@ -192,8 +193,25 @@ function SparkleIcon() {
 }
 
 export default function HeroIllustration() {
+  const ref = useRef(null);
+  const rx = useSpring(useMotionValue(0), { stiffness: 200, damping: 20 });
+  const ry = useSpring(useMotionValue(0), { stiffness: 200, damping: 20 });
+
+  const handleMove = (e) => {
+    const rect = ref.current.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+    ry.set((px - 0.5) * 10);
+    rx.set((0.5 - py) * 8);
+  };
+
+  const handleLeave = () => {
+    rx.set(0);
+    ry.set(0);
+  };
+
   return (
-    <div className="relative mx-auto w-full max-w-sm md:mx-0 md:ml-auto">
+    <div className="relative mx-auto w-full max-w-md md:mx-0 md:ml-auto" style={{ perspective: 1000 }}>
       <motion.div
         className="pointer-events-none absolute -inset-6 rounded-[32px] blur-2xl"
         style={{ background: "radial-gradient(circle, var(--color-teal-400) 0%, transparent 70%)", opacity: 0.35 }}
@@ -202,10 +220,14 @@ export default function HeroIllustration() {
       />
 
       <motion.div
+        ref={ref}
+        onMouseMove={handleMove}
+        onMouseLeave={handleLeave}
         className="relative overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }}
       >
         {/* window chrome */}
         <div className="flex items-center gap-2 border-b border-black/5 bg-[var(--color-canvas-alt)] px-4 py-3">
