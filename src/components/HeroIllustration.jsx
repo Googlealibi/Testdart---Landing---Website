@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const CYCLE = 13;
+const CYCLE = 7;
 
 // one continuous story, matching the real pipeline:
 // target URL + requirement typed -> generate clicked -> AI creates test cases
@@ -391,10 +391,10 @@ export default function HeroIllustration() {
               </p>
               <div className="grid grid-cols-4 gap-2">
                 {[
-                  { label: "Tests", value: "4/5" },
-                  { label: "Bugs found", value: "1" },
-                  { label: "Coverage", value: "94%" },
-                  { label: "Time", value: "8s" },
+                  { label: "Total", value: "5" },
+                  { label: "Passed", value: "4" },
+                  { label: "Failed", value: "1" },
+                  { label: "Scripts generated", value: "5" },
                 ].map((stat) => (
                   <div key={stat.label} className="rounded-xl bg-[var(--color-canvas-alt)]/60 px-2 py-2.5 text-center">
                     <p
