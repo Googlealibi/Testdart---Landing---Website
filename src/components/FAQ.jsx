@@ -61,14 +61,22 @@ export default function FAQ() {
                   className="flex w-full items-center justify-between gap-4 px-7 py-5 text-left"
                 >
                   <span className="font-semibold">{item.q}</span>
-                  <motion.span
-                    animate={{ rotate: isOpen ? 45 : 0 }}
+                  <motion.svg
+                    viewBox="0 0 24 24"
+                    animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="shrink-0 text-2xl font-light"
-                    style={{ color: "var(--color-indigo-500)" }}
+                    className="h-4 w-4 shrink-0"
+                    style={{ color: "var(--color-indigo-500)", transformOrigin: "50% 50%" }}
                   >
-                    +
-                  </motion.span>
+                    <path
+                      d="M6 9l6 6 6-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </motion.svg>
                 </button>
                 <AnimatePresence initial={false}>
                   {isOpen && (

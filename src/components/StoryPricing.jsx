@@ -31,8 +31,8 @@ const plans = [
 export default function StoryPricing() {
   return (
     <section id="pricing" className="px-6 py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-16 md:grid-cols-2 md:items-center">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-10 md:grid-cols-[340px_1fr] md:items-center">
           <Reveal>
             <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-coral-500)" }}>
               Before and after
@@ -47,36 +47,42 @@ export default function StoryPricing() {
             </div>
           </Reveal>
 
-          <div className="grid gap-6">
+          <div className="flex items-center py-6">
             {plans.map((plan, i) => (
-              <Reveal key={plan.name} delay={i * 0.1}>
+              <Reveal
+                key={plan.name}
+                delay={i * 0.1}
+                className={`relative min-w-0 flex-1 ${plan.highlighted ? "z-10 -translate-y-5" : "z-0 translate-y-3"} ${i > 0 ? "-ml-3" : ""}`}
+              >
                 <div
-                  className="rounded-3xl p-7"
+                  className="rounded-3xl p-5"
                   style={{
                     background: plan.highlighted ? "var(--color-indigo-900)" : "white",
                     color: plan.highlighted ? "white" : "var(--color-ink)",
-                    boxShadow: plan.highlighted ? "0 20px 40px -12px rgba(23,26,77,0.4)" : "none",
+                    boxShadow: plan.highlighted ? "0 24px 48px -12px rgba(23,26,77,0.45)" : "0 8px 20px -10px rgba(0,0,0,0.1)",
                     outline: plan.highlighted ? "none" : "1px solid rgba(0,0,0,0.06)",
                   }}
                 >
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="text-xl font-bold">{plan.name}</h3>
+                  <div className="flex items-baseline justify-between gap-1">
+                    <h3 className="text-base font-bold">{plan.name}</h3>
                     {plan.highlighted && (
-                      <span className="rounded-full px-3 py-1 text-xs font-semibold" style={{ background: "var(--color-teal-400)", color: "var(--color-ink)" }}>
+                      <span
+                        className="whitespace-nowrap rounded-full px-2 py-0.5 text-[9px] font-semibold"
+                        style={{ background: "var(--color-teal-400)", color: "var(--color-ink)" }}
+                      >
                         Most picked
                       </span>
                     )}
                   </div>
-                  <p className="mt-4">
-                    <span className="text-3xl font-bold" style={{ fontFamily: "var(--font-display)" }}>{plan.price}</span>
-                    <span className="ml-2 text-sm opacity-70">{plan.period}</span>
+                  <p className="mt-3">
+                    <span className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)" }}>{plan.price}</span>
                   </p>
-                  <p className={`mt-2 text-sm ${plan.highlighted ? "opacity-80" : "text-[var(--color-ink-soft)]"}`}>{plan.blurb}</p>
-                  <ul className="mt-5 space-y-2">
+                  <p className="text-[11px] opacity-70">{plan.period}</p>
+                  <ul className="mt-4 space-y-1.5">
                     {plan.perks.map((perk) => (
-                      <li key={perk} className="flex items-start gap-2 text-sm">
+                      <li key={perk} className="flex items-start gap-1.5 text-xs">
                         <span
-                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
+                          className="mt-1 h-1 w-1 shrink-0 rounded-full"
                           style={{ background: plan.highlighted ? "var(--color-teal-400)" : "var(--color-indigo-500)" }}
                         />
                         {perk}
@@ -85,7 +91,7 @@ export default function StoryPricing() {
                   </ul>
                   <a
                     href="#top"
-                    className="mt-6 block rounded-full px-5 py-2.5 text-center text-sm font-semibold transition-transform hover:scale-105"
+                    className="mt-5 block rounded-full px-3 py-2 text-center text-xs font-semibold transition-transform hover:scale-105"
                     style={{
                       background: plan.highlighted ? "white" : "var(--color-indigo-500)",
                       color: plan.highlighted ? "var(--color-indigo-700)" : "white",
