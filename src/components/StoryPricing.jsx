@@ -30,7 +30,7 @@ const plans = [
 
 export default function StoryPricing() {
   return (
-    <section id="pricing" className="px-6 py-24">
+    <section id="pricing" className="px-6 py-24" style={{ background: "var(--color-canvas-alt)" }}>
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 md:grid-cols-[340px_1fr] md:items-center">
           <Reveal>

@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
 
-  /* all green family, hue shifted per section for psychology:
-     deep forest (155) = trust/authority, emerald (150) = growth/pass-state,
-     lime (120) = energy/attention for CTAs, moss (95) = warm confirming accent.
-     lightness/chroma carry the contrast, hue never leaves green. */
+  /* green stays the brand: deep forest (155) = trust/authority for ink and
+     the primary indigo scale, emerald (150) = growth/pass-state for teal.
+     that's the identity, dominant everywhere (60-30 of the page).
+     "amber" and coral are the 10% — the parts meant to pull the eye
+     (CTAs, "most picked", star ratings, floating highlights) — so they get
+     real distinct hues instead of more green: "amber" is actually violet
+     (hue 300, premium/attention, no orange or yellow anywhere on the page),
+     coral = true warm red (hue 20), urgency without alarm. */
   --color-ink: oklch(20% 0.025 155);
   --color-ink-soft: oklch(46% 0.03 155);
-  --color-canvas: oklch(98% 0.008 150);
-  --color-canvas-alt: oklch(95% 0.02 150);
+  --color-canvas: oklch(97% 0.018 148);
+  --color-canvas-alt: oklch(93% 0.032 148);
   --color-indigo-50: oklch(96% 0.025 155);
   --color-indigo-100: oklch(91% 0.05 155);
   --color-indigo-500: oklch(45% 0.13 155);
@@ -21,10 +25,10 @@
   --color-teal-400: oklch(70% 0.16 150);
   --color-teal-500: oklch(58% 0.16 150);
   --color-teal-600: oklch(50% 0.15 150);
-  --color-amber-400: oklch(80% 0.18 122);
-  --color-amber-500: oklch(72% 0.19 118);
-  --color-coral-400: oklch(68% 0.13 172);
-  --color-coral-500: oklch(54% 0.13 172);
+  --color-amber-400: oklch(78% 0.15 300);
+  --color-amber-500: oklch(65% 0.19 300);
+  --color-coral-400: oklch(70% 0.16 22);
+  --color-coral-500: oklch(58% 0.19 20);
 }
 
 html {
@@ -41,7 +45,9 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
 }
 
 ::selection {

@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="px-6 py-16" style={{ background: "var(--color-ink)" }}>
+    <footer className="px-6 py-16" style={{ background: "var(--color-indigo-900)" }}>
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr]">
         <div>
           <p className="flex items-center gap-1 text-xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>

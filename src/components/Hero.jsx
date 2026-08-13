@@ -19,10 +19,10 @@ export default function Hero() {
         style={{ background: "var(--color-amber-400)" }}
       />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1.3fr_1fr] md:gap-8">
         <div>
           <motion.h1
-            className="text-4xl font-bold leading-[1.08] tracking-tight text-[var(--color-ink)] md:text-6xl"
+            className="text-4xl font-bold leading-[1.1] text-[var(--color-ink)] md:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}

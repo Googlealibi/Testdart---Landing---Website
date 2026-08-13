@@ -27,11 +27,19 @@ export default function Header() {
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
-          <a href="#pricing" className="text-sm font-medium text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ink)]">
+          <a href="#pricing" className="group relative py-1 text-sm font-medium text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ink)]">
             Pricing
+            <span
+              className="absolute inset-x-0 -bottom-0.5 h-[1.5px] origin-left scale-x-0 rounded-full transition-transform duration-300 ease-out group-hover:scale-x-100"
+              style={{ background: "var(--color-indigo-500)" }}
+            />
           </a>
-          <a href="#agentic-qa" className="text-sm font-medium text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ink)]">
+          <a href="#agentic-qa" className="group relative py-1 text-sm font-medium text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ink)]">
             Agentic QA
+            <span
+              className="absolute inset-x-0 -bottom-0.5 h-[1.5px] origin-left scale-x-0 rounded-full transition-transform duration-300 ease-out group-hover:scale-x-100"
+              style={{ background: "var(--color-indigo-500)" }}
+            />
           </a>
           <button
             type="button"
