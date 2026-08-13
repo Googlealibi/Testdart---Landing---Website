@@ -15,7 +15,7 @@ export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Header />
-      <main className="pt-[72px]">
+      <main style={{ paddingTop: "var(--header-h, 88px)" }}>
         <Hero />
         <Demo />
         <WhyTestDart />

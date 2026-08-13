@@ -33,7 +33,7 @@ export default function Footer() {
           <nav className="mt-4 flex flex-col gap-2.5 text-sm text-white/60">
             <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white">Contact</a>
             <a href="#top" className="hover:text-white">Log In</a>
-            <a href="#top" className="hover:text-white">CTA</a>
+            <button type="button" className="text-left hover:text-white">CTA</button>
           </nav>
         </div>
 

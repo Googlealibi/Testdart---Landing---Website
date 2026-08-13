@@ -60,13 +60,13 @@ export default function Features() {
         </div>
 
         <Reveal delay={0.3} className="mt-12 flex justify-center">
-          <a
-            href="#pricing"
+          <button
+            type="button"
             className="inline-block rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
             style={{ background: "var(--color-teal-500)" }}
           >
             CTA
-          </a>
+          </button>
         </Reveal>
       </div>
     </section>

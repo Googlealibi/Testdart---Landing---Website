@@ -29,7 +29,7 @@
 
 html {
   scroll-behavior: auto;
-  scroll-padding-top: 72px;
+  scroll-padding-top: var(--header-h, 88px);
 }
 
 body {

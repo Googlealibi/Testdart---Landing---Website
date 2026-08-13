@@ -47,20 +47,19 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <a
-              id="cta"
-              href="#pricing"
+            <button
+              type="button"
               className="rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition-transform hover:scale-105"
               style={{ background: "var(--color-indigo-500)" }}
             >
               CTA
-            </a>
-            <a
-              href="#demo"
+            </button>
+            <button
+              type="button"
               className="rounded-full px-7 py-3.5 text-sm font-semibold text-[var(--color-ink)] ring-1 ring-black/10 transition-colors hover:bg-white"
             >
               CTA 2
-            </a>
+            </button>
           </motion.div>
 
           <motion.ul

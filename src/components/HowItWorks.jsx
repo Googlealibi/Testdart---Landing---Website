@@ -55,13 +55,13 @@ export default function HowItWorks() {
         </div>
 
         <Reveal delay={0.2}>
-          <a
-            href="#pricing"
+          <button
+            type="button"
             className="mt-8 inline-block rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
             style={{ background: "var(--color-coral-500)" }}
           >
             CTA
-          </a>
+          </button>
         </Reveal>
       </div>
     </section>
