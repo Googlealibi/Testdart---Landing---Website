@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Reveal from "./Reveal";
 
 // color psychology: indigo = decisive/trustworthy action (single click),
@@ -198,6 +199,39 @@ function SpeedVisual({ tint }) {
   );
 }
 
+function FeatureRow({ f, i }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.85", "start 0.4"] });
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.93, 1]);
+  const x = useTransform(scrollYProgress, [0, 1], [i % 2 === 0 ? -28 : 28, 0]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{ opacity, scale, x }}
+      className={`grid items-center gap-10 md:grid-cols-2 ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
+    >
+      <div className="mx-auto w-full max-w-sm">
+        <BrowserFrame>
+          <f.Visual tint={f.tint} />
+        </BrowserFrame>
+      </div>
+
+      <div>
+        <span
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-sm font-bold text-white"
+          style={{ background: f.tint }}
+        >
+          {i + 1}
+        </span>
+        <h3 className="mt-5 text-2xl font-bold">{f.title}</h3>
+        <p className="mt-3 max-w-md text-[var(--color-ink-soft)]">{f.body}</p>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function WhyTestDart() {
   return (
     <section className="px-6 py-24">
@@ -208,26 +242,7 @@ export default function WhyTestDart() {
 
         <div className="mt-16 flex flex-col gap-16">
           {features.map((f, i) => (
-            <Reveal key={f.title} delay={0.1}>
-              <div className="grid items-center gap-10 md:grid-cols-2">
-                <div className="mx-auto w-full max-w-sm">
-                  <BrowserFrame>
-                    <f.Visual tint={f.tint} />
-                  </BrowserFrame>
-                </div>
-
-                <div>
-                  <span
-                    className="flex h-10 w-10 items-center justify-center rounded-xl text-sm font-bold text-white"
-                    style={{ background: f.tint }}
-                  >
-                    {i + 1}
-                  </span>
-                  <h3 className="mt-5 text-2xl font-bold">{f.title}</h3>
-                  <p className="mt-3 max-w-md text-[var(--color-ink-soft)]">{f.body}</p>
-                </div>
-              </div>
-            </Reveal>
+            <FeatureRow key={f.title} f={f} i={i} />
           ))}
         </div>
 
