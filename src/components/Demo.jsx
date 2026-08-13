@@ -37,13 +37,13 @@ const indicators = [
 export default function Demo() {
   return (
     <section id="demo" className="px-6 py-24" style={{ background: "var(--color-canvas-alt)" }}>
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-5xl">
         <Reveal className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Watch the demo to see testdart in action</h2>
         </Reveal>
 
-        <div className="mt-12 grid items-stretch gap-8 md:grid-cols-[280px_1fr]">
-          <div className="flex h-full flex-col gap-4">
+        <div className="mt-12 grid gap-8 md:grid-cols-[240px_1fr] md:items-center">
+          <div className="flex flex-col justify-center gap-4">
             {indicators.map((item, i) => (
               <Reveal key={item.label} delay={0.1 + i * 0.08}>
                 <div
@@ -67,7 +67,7 @@ export default function Demo() {
             ))}
           </div>
 
-          <div className="flex flex-col">
+          <div>
             <Reveal delay={0.15}>
               <div className="group relative aspect-video overflow-hidden rounded-2xl bg-[var(--color-ink)] shadow-2xl">
                 <div
@@ -82,18 +82,18 @@ export default function Demo() {
                 </button>
               </div>
             </Reveal>
-
-            <Reveal delay={0.25} className="mt-8 flex justify-center">
-              <a
-                href="#pricing"
-                className="inline-block rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
-                style={{ background: "var(--color-teal-500)" }}
-              >
-                CTA
-              </a>
-            </Reveal>
           </div>
         </div>
+
+        <Reveal delay={0.25} className="mt-8 flex justify-center">
+          <a
+            href="#pricing"
+            className="inline-block rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
+            style={{ background: "var(--color-teal-500)" }}
+          >
+            CTA
+          </a>
+        </Reveal>
       </div>
     </section>
   );
