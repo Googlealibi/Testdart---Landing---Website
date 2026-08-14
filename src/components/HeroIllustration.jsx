@@ -148,7 +148,7 @@ const scenes = [
           animate={{ opacity: [0, 1, 1, 0] }}
           transition={{ duration: 1.1, repeat: Infinity, ease: "easeInOut" }}
         >
-          ✓ Card expired — correctly rejected
+          ✓ Card expired, correctly rejected
         </motion.p>
       </>
     ),
@@ -235,7 +235,7 @@ export default function HeroIllustration() {
           <span className="h-2.5 w-2.5 rounded-full bg-black/10" />
           <span className="h-2.5 w-2.5 rounded-full bg-black/10" />
           <span className="ml-3 rounded-full bg-white px-3 py-1 text-[11px] font-medium text-[var(--color-ink-soft)] ring-1 ring-black/5">
-            app.testdart.ai
+testdart
           </span>
         </div>
 
@@ -249,7 +249,7 @@ export default function HeroIllustration() {
             <div className="relative flex items-center rounded-xl border border-black/10 bg-[var(--color-canvas-alt)]/40 px-3 py-2.5">
               <span className="mr-2 shrink-0 text-[12px] text-[var(--color-ink-soft)]">🔗</span>
               <motion.p
-                className="min-w-0 max-w-full overflow-hidden whitespace-nowrap border-r-2 border-[var(--color-indigo-500)] text-[12.5px] font-medium text-[var(--color-ink)]"
+                className="min-w-0 max-w-full overflow-hidden whitespace-nowrap text-[12.5px] font-medium text-[var(--color-ink)]"
                 {...typeWidth("account.yourapp.com", T.urlType)}
               >
                 account.yourapp.com
@@ -259,7 +259,7 @@ export default function HeroIllustration() {
             <div className="relative mt-2.5 flex items-center rounded-xl border border-black/10 bg-[var(--color-canvas-alt)]/40 px-3 py-2.5">
               <span className="mr-2 shrink-0 text-[12px] text-[var(--color-ink-soft)]">📝</span>
               <motion.p
-                className="min-w-0 max-w-full overflow-hidden whitespace-nowrap border-r-2 border-[var(--color-indigo-500)] text-[12.5px] font-medium text-[var(--color-ink)]"
+                className="min-w-0 max-w-full overflow-hidden whitespace-nowrap text-[12.5px] font-medium text-[var(--color-ink)]"
                 {...typeWidth("Users can log in, apply a coupon, and pay at checkout.", T.reqType)}
               >
                 Users can log in, apply a coupon, and pay at checkout.
@@ -301,10 +301,10 @@ export default function HeroIllustration() {
             <motion.div
               className="pointer-events-none absolute left-0 top-0 z-10 h-4 w-4"
               animate={{
-                x: [30, 30, 30, 30, 30, 30, 30, 30, 30, 195, 195, 195, 30],
-                y: [46, 46, 46, 46, 46, 92, 92, 92, 92, 142, 142, 142, 46],
+                x: [30, 30, 30, 30, 30, 30, 30, 30, 30, 195, 195, 195, 195],
+                y: [46, 46, 46, 46, 46, 92, 92, 92, 92, 142, 142, 142, 142],
                 opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
-                scale: [1, 1, 0.75, 1, 1, 1, 0.75, 1, 1, 1, 0.65, 1.1, 1],
+                scale: [1, 1, 0.75, 1, 1, 1, 0.75, 1, 1, 1, 0.65, 1.1, 1.1],
               }}
               transition={{
                 duration: CYCLE,
@@ -487,7 +487,7 @@ export default function HeroIllustration() {
                   <path d="M4 12l5 5L20 6" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </motion.span>
-              <p className="text-[12.5px] font-semibold text-[var(--color-ink)]">Test suite complete</p>
+              <p className="text-[12.5px] font-semibold text-[var(--color-ink)]">Test Results</p>
             </motion.div>
 
             <div className="grid grid-cols-2 gap-2.5">

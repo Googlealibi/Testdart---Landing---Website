@@ -6,15 +6,15 @@ import Reveal from "./Reveal";
 // teal = calm/unified (everything living in one place), amber = energy/urgency (speed)
 const features = [
   {
-    title: "Go from requirement to a full test run in one click",
-    body: "Paste a requirement or user story and testdart plans the test cases, writes them, and runs them in a real browser — no scripting, no separate tool.",
+    title: "Test any product or feature with a single click",
+    body: "Give testdart a requirement and it plans, writes and runs the tests for you, with no scripting and no separate tools.",
     tint: "var(--color-indigo-500)",
     Visual: OneClickVisual,
     Icon: ClickIcon,
   },
   {
-    title: "Requirements, tests, execution and reports in one place",
-    body: "Everything QA touches lives inside testdart, so nothing gets tracked in a spreadsheet on the side or lost between tools.",
+    title: "Manage your whole QA process in one platform",
+    body: "Execution, your test library and results all live in a single application, instead of being scattered across separate tools.",
     tint: "var(--color-teal-500)",
     Visual: OnePlaceVisual,
     Icon: LayersIcon,
@@ -219,7 +219,7 @@ function OneClickVisual({ tint }) {
             </svg>
           </span>
           <p className="text-xs font-semibold" style={{ color: tint }}>
-            3/3 passed — done
+            3/3 passed
           </p>
         </motion.div>
       </div>
@@ -300,35 +300,54 @@ function OnePlaceVisual({ tint }) {
   );
 }
 
+// two tracks racing in sync, not one lagging behind the other — that's the
+// actual claim: QA runs alongside the release, never after it
+const SPEED_CYCLE = 3;
+const tracks = [
+  { label: "Code deploy" },
+  { label: "Tests running" },
+];
+
 function SpeedVisual({ tint }) {
   return (
-    <div className="w-full px-4">
-      <div className="flex items-center justify-between text-[10px] font-semibold text-[var(--color-ink-soft)]">
-        <span>Dev ships</span>
+    <div className="w-full max-w-[210px]">
+      <div className="flex items-center justify-between text-[9px] font-semibold uppercase tracking-wide text-[var(--color-ink-soft)]">
+        <span>Commit</span>
         <span>Live</span>
       </div>
-      <div className="relative mt-3 h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-canvas-alt)]">
-        <motion.div
-          className="absolute inset-y-0 left-0 rounded-full"
-          style={{ background: tint }}
-          animate={{ width: ["0%", "100%", "100%"] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", times: [0, 0.7, 1] }}
-        />
-        <motion.div
-          className="absolute -top-1.5 h-4 w-4 rounded-full shadow-md"
-          style={{ background: tint }}
-          animate={{ left: ["0%", "97%", "97%"] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", times: [0, 0.7, 1] }}
-        />
+
+      <div className="mt-2.5 space-y-2.5">
+        {tracks.map((t, i) => (
+          <div key={t.label}>
+            <p className="mb-1 text-[9.5px] font-medium text-[var(--color-ink)]">{t.label}</p>
+            <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-canvas-alt)]">
+              <motion.div
+                className="absolute inset-y-0 left-0 rounded-full"
+                style={{ background: tint }}
+                animate={{ width: ["0%", "0%", "100%", "100%"] }}
+                transition={{
+                  duration: SPEED_CYCLE,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  times: [0, 0.05 + i * 0.03, 0.72 + i * 0.03, 1],
+                }}
+              />
+            </div>
+          </div>
+        ))}
       </div>
-      <motion.p
-        className="mt-4 text-center text-xs font-semibold"
-        style={{ color: tint }}
+
+      <motion.div
+        className="mt-3 flex items-center justify-center gap-1.5 rounded-lg px-2.5 py-1.5"
+        style={{ background: `color-mix(in oklch, ${tint} 12%, white)` }}
         animate={{ opacity: [0, 0, 1, 1, 0] }}
-        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", times: [0, 0.65, 0.75, 0.95, 1] }}
+        transition={{ duration: SPEED_CYCLE, repeat: Infinity, ease: "easeInOut", times: [0, 0.72, 0.8, 0.96, 1] }}
       >
-        Tests kept pace — shipped on time
-      </motion.p>
+        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" style={{ color: tint }}>
+          <path d="M4 12l5 5L20 6" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <p className="text-xs font-semibold" style={{ color: tint }}>Shipped, fully tested</p>
+      </motion.div>
     </div>
   );
 }

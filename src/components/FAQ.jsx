@@ -38,7 +38,7 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(-1);
 
   return (
     <section id="faq" className="px-6 py-24" style={{ background: "var(--color-canvas-alt)" }}>

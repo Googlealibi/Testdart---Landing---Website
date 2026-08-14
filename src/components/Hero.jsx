@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import HeroIllustration from "./HeroIllustration";
 
 const bullets = [
-  { text: "No credit card required", color: "var(--color-amber-500)" },
-  { text: "Setup in 2 minutes", color: "var(--color-amber-500)" },
-  { text: "Cancel anytime", color: "var(--color-amber-500)" },
+  { text: "No credit card required", color: "oklch(78% 0.15 85)" },
+  { text: "Setup in 2 minutes", color: "oklch(78% 0.15 85)" },
+  { text: "Cancel anytime", color: "oklch(78% 0.15 85)" },
 ];
 
 export default function Hero() {

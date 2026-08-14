@@ -21,10 +21,10 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-semibold text-white">Explore</h4>
           <nav className="mt-4 flex flex-col gap-2.5 text-sm text-white/60">
-            <a href="#agentic-qa" className="hover:text-white">Features</a>
-            <a href="#pricing" className="hover:text-white">Pricing</a>
-            <a href="#demo" className="hover:text-white">Demo</a>
-            <a href="#faq" className="hover:text-white">FAQ</a>
+            <a href="/#agentic-qa" className="hover:text-white">Features</a>
+            <a href="/#pricing" className="hover:text-white">Pricing</a>
+            <a href="/#demo" className="hover:text-white">Demo</a>
+            <a href="/#faq" className="hover:text-white">FAQ</a>
           </nav>
         </div>
 
@@ -32,7 +32,7 @@ export default function Footer() {
           <h4 className="text-sm font-semibold text-white">Company</h4>
           <nav className="mt-4 flex flex-col gap-2.5 text-sm text-white/60">
             <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white">Contact</a>
-            <a href="#top" className="hover:text-white">Log In</a>
+            <a href="/#top" className="hover:text-white">Log In</a>
             <button type="button" className="text-left hover:text-white">CTA</button>
           </nav>
         </div>

@@ -348,7 +348,7 @@ const items = [
   {
     name: "Reports",
     tag: "Visibility",
-    body: "Total, passed, failed and scripts generated — the same run report the whole team sees, updated live.",
+    body: "Total, passed, failed and scripts generated, all part of the same run report the whole team sees, updated live.",
     Icon: ChartIcon,
     Visual: ReportVisual,
   },
@@ -382,7 +382,7 @@ export default function Features() {
           <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-indigo-600)" }}>
             Inside testdart
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">See how each part actually works</h2>
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">Features that power every test run</h2>
         </Reveal>
 
         <Reveal delay={0.1}>
