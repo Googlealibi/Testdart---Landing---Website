@@ -44,14 +44,14 @@ export default function FAQ() {
     <section id="faq" className="px-6 py-24" style={{ background: "var(--color-canvas-alt)" }}>
       <div className="mx-auto max-w-3xl">
         <Reveal className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-teal-600)" }}>
+          <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-teal-400)" }}>
             FAQ
           </p>
-          <h2 className="mt-3 text-3xl font-bold md:text-4xl">Frequently asked questions</h2>
-          <p className="mt-3 text-[var(--color-ink-soft)]">Answers to the questions teams ask when evaluating testdart.</p>
+          <h2 className="mt-3 text-3xl font-bold text-[var(--color-mist)] md:text-4xl">Frequently asked questions</h2>
+          <p className="mt-3 text-[var(--color-mist-soft)]">Answers to the questions teams ask when evaluating testdart.</p>
         </Reveal>
 
-        <div className="mt-10 divide-y divide-black/10 rounded-3xl bg-white ring-1 ring-black/5">
+        <div className="mt-10 divide-y divide-black/10 rounded-3xl bg-white text-[var(--color-ink)] ring-1 ring-black/5">
           {faqs.map((item, i) => {
             const isOpen = open === i;
             return (

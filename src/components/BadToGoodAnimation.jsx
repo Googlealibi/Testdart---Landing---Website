@@ -46,7 +46,7 @@ export default function BadToGoodAnimation() {
   return (
     <div className="mx-auto grid w-full max-w-sm grid-cols-[1fr_auto_1fr] items-center gap-3">
       <div>
-        <p className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: "var(--color-coral-500)" }}>
+        <p className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: "var(--color-coral-400)" }}>
           Before
         </p>
         <div className="relative mt-3 h-28">
@@ -63,12 +63,12 @@ export default function BadToGoodAnimation() {
         </div>
       </div>
 
-      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" style={{ color: "var(--color-ink-soft)" }}>
+      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" style={{ color: "var(--color-mist-soft)" }}>
         <path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
 
       <div>
-        <p className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: "var(--color-teal-600)" }}>
+        <p className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: "var(--color-teal-400)" }}>
           After
         </p>
         <div className="mt-3 space-y-1.5">

@@ -77,9 +77,9 @@ function GaugeIcon({ tint }) {
 function BrowserFrame({ tint, children }) {
   return (
     <div
-      className="flex aspect-[4/3] w-full flex-col overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5"
+      className="flex aspect-[4/3] w-full flex-col overflow-hidden rounded-2xl text-[var(--color-ink)] shadow-xl ring-1 ring-black/5"
       style={{
-        background: `linear-gradient(160deg, color-mix(in oklch, ${tint} 14%, var(--color-canvas)) 0%, var(--color-canvas-alt) 100%)`,
+        background: `linear-gradient(160deg, color-mix(in oklch, ${tint} 14%, white) 0%, var(--color-card-wash) 100%)`,
       }}
     >
       <div className="flex items-center gap-1.5 border-b border-black/5 px-3 py-2" style={{ background: `color-mix(in oklch, ${tint} 8%, white)` }}>
@@ -161,7 +161,7 @@ function OneClickVisual({ tint }) {
             const runAt = CLICK_T.rowsShow + i * span + span * 0.25;
             const doneAt = runAt + span * 0.5;
             return (
-              <div key={row.name} className="flex items-center justify-between rounded-md bg-[var(--color-canvas-alt)]/70 px-2 py-1.5">
+              <div key={row.name} className="flex items-center justify-between rounded-md bg-[var(--color-card-wash)]/70 px-2 py-1.5">
                 <span className="text-[10.5px] font-medium text-[var(--color-ink)]">{row.name}</span>
                 <span className="relative h-3 w-3">
                   <motion.span
@@ -248,7 +248,7 @@ function OnePlaceVisual({ tint }) {
     <div className="flex flex-col items-center gap-3">
       <motion.div
         className="w-[168px] space-y-1.5 rounded-xl border-2 bg-white p-2"
-        animate={{ borderColor: ["var(--color-canvas-alt)", "var(--color-canvas-alt)", tint, "var(--color-canvas-alt)"] }}
+        animate={{ borderColor: ["var(--color-card-wash)", "var(--color-card-wash)", tint, "var(--color-card-wash)"] }}
         transition={{
           duration: PLACE_CYCLE,
           repeat: Infinity,
@@ -261,7 +261,7 @@ function OnePlaceVisual({ tint }) {
           return (
             <motion.div
               key={item.label}
-              className="flex items-center gap-1.5 rounded-md bg-[var(--color-canvas-alt)]/60 px-2 py-1.5"
+              className="flex items-center gap-1.5 rounded-md bg-[var(--color-card-wash)]/60 px-2 py-1.5"
               animate={{
                 x: [item.from.x, item.from.x, 0],
                 y: [item.from.y, item.from.y, 0],
@@ -320,7 +320,7 @@ function SpeedVisual({ tint }) {
         {tracks.map((t, i) => (
           <div key={t.label}>
             <p className="mb-1 text-[9.5px] font-medium text-[var(--color-ink)]">{t.label}</p>
-            <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-canvas-alt)]">
+            <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-card-wash)]">
               <motion.div
                 className="absolute inset-y-0 left-0 rounded-full"
                 style={{ background: tint }}
@@ -378,8 +378,8 @@ function FeatureRow({ f, i }) {
         >
           <f.Icon tint={f.tint} />
         </span>
-        <h3 className="mt-5 text-2xl font-bold">{f.title}</h3>
-        <p className="mt-3 max-w-md text-[var(--color-ink-soft)]">{f.body}</p>
+        <h3 className="mt-5 text-2xl font-bold text-[var(--color-mist)]">{f.title}</h3>
+        <p className="mt-3 max-w-md text-[var(--color-mist-soft)]">{f.body}</p>
       </div>
     </motion.div>
   );
@@ -390,7 +390,7 @@ export default function WhyTestDart() {
     <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal className="text-center">
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold md:text-4xl">Why teams switch to testdart</h2>
+          <h2 className="mx-auto max-w-2xl text-3xl font-bold text-[var(--color-mist)] md:text-4xl">Why teams switch to testdart</h2>
         </Reveal>
 
         <div className="mt-16 flex flex-col gap-16">

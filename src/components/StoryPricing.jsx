@@ -35,8 +35,8 @@ export default function StoryPricing() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 md:grid-cols-[280px_1fr] md:items-center">
           <Reveal>
-            <h2 className="text-3xl font-bold md:text-4xl">From tangled QA to a clean release, every time</h2>
-            <p className="mt-4 max-w-md text-[var(--color-ink-soft)]">
+            <h2 className="text-3xl font-bold text-[var(--color-mist)] md:text-4xl">From tangled QA to a clean release, every time</h2>
+            <p className="mt-4 max-w-md text-[var(--color-mist-soft)]">
               Spreadsheets, missed edge cases and last minute scrambles give way to a single
               workspace that plans, runs and proves your coverage.
             </p>

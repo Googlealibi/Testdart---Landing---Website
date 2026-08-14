@@ -10,29 +10,20 @@ const bullets = [
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden px-6 pt-16 pb-24 md:pt-24 md:pb-32">
-      <div
-        className="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full opacity-30 blur-3xl"
-        style={{ background: "var(--color-teal-400)" }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-32 left-0 h-96 w-96 rounded-full opacity-20 blur-3xl"
-        style={{ background: "var(--color-amber-400)" }}
-      />
-
       <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1.3fr_1fr] md:gap-8">
         <div>
           <motion.h1
-            className="text-4xl font-bold leading-[1.1] text-[var(--color-ink)] md:text-6xl"
+            className="text-4xl font-bold leading-[1.1] text-[var(--color-mist)] md:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             Ship Quality Software{" "}
-            <span style={{ color: "var(--color-indigo-500)" }}>at the Speed</span> of AI
+            <span style={{ color: "var(--color-teal-400)" }}>at the Speed</span> of AI
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-ink-soft)]"
+            className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-mist-soft)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -56,7 +47,8 @@ export default function Hero() {
             </button>
             <button
               type="button"
-              className="rounded-full px-7 py-3.5 text-sm font-semibold text-[var(--color-ink)] ring-1 ring-black/10 transition-colors hover:bg-white"
+              className="rounded-full px-7 py-3.5 text-sm font-semibold text-[var(--color-mist)] ring-1 transition-colors hover:bg-white hover:text-[var(--color-ink)]"
+              style={{ "--tw-ring-color": "var(--color-hairline)" }}
             >
               CTA 2
             </button>
@@ -69,7 +61,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             {bullets.map((b) => (
-              <li key={b.text} className="flex items-center gap-1.5 text-sm font-medium text-[var(--color-ink-soft)]">
+              <li key={b.text} className="flex items-center gap-1.5 text-sm font-medium text-[var(--color-mist-soft)]">
                 <span style={{ color: b.color }}>&#9733;</span>
                 {b.text}
               </li>

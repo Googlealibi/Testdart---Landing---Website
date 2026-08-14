@@ -14,8 +14,20 @@
      coral = true warm red (hue 20), urgency without alarm. */
   --color-ink: oklch(20% 0.025 155);
   --color-ink-soft: oklch(46% 0.03 155);
-  --color-canvas: oklch(97% 0.018 148);
-  --color-canvas-alt: oklch(93% 0.032 148);
+  /* dark theme is the default; :root[data-theme="light"] below swaps this
+     block back to the original light/mild palette. --color-mist is the
+     token every on-canvas heading/body element actually uses, so flipping
+     it here is what makes the toggle work without touching every component */
+  --color-canvas: oklch(34% 0.05 155);
+  --color-canvas-alt: oklch(29% 0.055 155);
+  --color-mist: oklch(97% 0.012 150);
+  --color-mist-soft: oklch(82% 0.03 150);
+  --color-hairline: rgba(255, 255, 255, 0.12);
+  --color-hairline-soft: rgba(255, 255, 255, 0.06);
+  /* fixed-light texture used INSIDE white cards (skeleton bars, chrome
+     strips, chip backgrounds) — stays light regardless of page theme,
+     separate from --color-canvas-alt which is a page-level section bg */
+  --color-card-wash: oklch(95% 0.02 150);
   --color-indigo-50: oklch(96% 0.025 155);
   --color-indigo-100: oklch(91% 0.05 155);
   --color-indigo-500: oklch(45% 0.13 155);
@@ -31,6 +43,18 @@
   --color-coral-500: oklch(58% 0.19 20);
 }
 
+/* the old, mild light theme — everything that sits directly on the page
+   background flips back to a light canvas with dark mist text; anything
+   inside a white card (--color-ink) never changes between themes */
+:root[data-theme="light"] {
+  --color-canvas: oklch(97% 0.018 148);
+  --color-canvas-alt: oklch(93% 0.032 148);
+  --color-mist: var(--color-ink);
+  --color-mist-soft: var(--color-ink-soft);
+  --color-hairline: rgba(0, 0, 0, 0.1);
+  --color-hairline-soft: rgba(0, 0, 0, 0.05);
+}
+
 html {
   scroll-behavior: auto;
   scroll-padding-top: var(--header-h, 88px);
@@ -39,7 +63,7 @@ html {
 body {
   font-family: var(--font-body);
   background: var(--color-canvas);
-  color: var(--color-ink);
+  color: var(--color-mist);
   -webkit-font-smoothing: antialiased;
 }
 

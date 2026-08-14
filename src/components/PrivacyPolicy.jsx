@@ -70,6 +70,7 @@ function BackHome() {
 export default function PrivacyPolicy() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
+      <div className="rounded-3xl bg-white p-8 text-[var(--color-ink)] shadow-xl ring-1 ring-black/5 md:p-12">
       <BackHome />
 
       <p className="mt-6 text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-teal-600)" }}>
@@ -160,6 +161,7 @@ export default function PrivacyPolicy() {
 
       <div className="mt-14 border-t border-black/10 pt-8">
         <BackHome />
+      </div>
       </div>
     </div>
   );

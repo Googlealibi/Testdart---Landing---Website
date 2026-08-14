@@ -67,7 +67,7 @@ const scenes = [
     step: "Logging in with test credentials",
     render: () => (
       <>
-        <div className="h-2.5 w-20 rounded bg-[var(--color-canvas-alt)]" />
+        <div className="h-2.5 w-20 rounded bg-[var(--color-card-wash)]" />
         <div className="mt-2.5 h-6 w-full rounded border border-black/10 bg-white" />
         <div className="mt-2 h-6 w-full rounded border border-black/10 bg-white" />
         <motion.div
@@ -84,8 +84,8 @@ const scenes = [
     render: () => (
       <>
         <div className="flex items-center justify-between">
-          <div className="h-2.5 w-24 rounded bg-[var(--color-canvas-alt)]" />
-          <div className="h-2.5 w-10 rounded bg-[var(--color-canvas-alt)]" />
+          <div className="h-2.5 w-24 rounded bg-[var(--color-card-wash)]" />
+          <div className="h-2.5 w-10 rounded bg-[var(--color-card-wash)]" />
         </div>
         <div className="mt-2.5 flex items-center gap-2">
           <div className="h-6 flex-1 rounded border border-black/10 bg-white" />
@@ -97,7 +97,7 @@ const scenes = [
           />
         </div>
         <div className="mt-2.5 flex items-center justify-between">
-          <div className="h-2.5 w-12 rounded bg-[var(--color-canvas-alt)]" />
+          <div className="h-2.5 w-12 rounded bg-[var(--color-card-wash)]" />
           <motion.p
             className="text-sm font-bold"
             style={{ color: "var(--color-teal-500)" }}
@@ -164,10 +164,10 @@ const scenes = [
             animate={{ scale: [1, 1.15, 1] }}
             transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
           />
-          <div className="h-2.5 w-28 rounded bg-[var(--color-canvas-alt)]" />
+          <div className="h-2.5 w-28 rounded bg-[var(--color-card-wash)]" />
         </div>
-        <div className="mt-2.5 h-2.5 w-full rounded bg-[var(--color-canvas-alt)]" />
-        <div className="mt-2 h-2.5 w-2/3 rounded bg-[var(--color-canvas-alt)]" />
+        <div className="mt-2.5 h-2.5 w-full rounded bg-[var(--color-card-wash)]" />
+        <div className="mt-2 h-2.5 w-2/3 rounded bg-[var(--color-card-wash)]" />
         <motion.p
           className="mt-2.5 text-xs font-semibold"
           style={{ color: "var(--color-indigo-500)" }}
@@ -223,14 +223,14 @@ export default function HeroIllustration() {
         ref={ref}
         onMouseMove={handleMove}
         onMouseLeave={handleLeave}
-        className="relative overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5"
+        className="relative overflow-hidden rounded-2xl bg-white text-[var(--color-ink)] shadow-2xl ring-1 ring-black/5"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }}
       >
         {/* window chrome */}
-        <div className="flex items-center gap-2 border-b border-black/5 bg-[var(--color-canvas-alt)] px-4 py-3">
+        <div className="flex items-center gap-2 border-b border-black/5 bg-[var(--color-card-wash)] px-4 py-3">
           <span className="h-2.5 w-2.5 rounded-full bg-black/10" />
           <span className="h-2.5 w-2.5 rounded-full bg-black/10" />
           <span className="h-2.5 w-2.5 rounded-full bg-black/10" />
@@ -246,7 +246,7 @@ testdart
               1 · Requirement &amp; target
             </p>
 
-            <div className="relative flex items-center rounded-xl border border-black/10 bg-[var(--color-canvas-alt)]/40 px-3 py-2.5">
+            <div className="relative flex items-center rounded-xl border border-black/10 bg-[var(--color-card-wash)]/40 px-3 py-2.5">
               <span className="mr-2 shrink-0 text-[12px] text-[var(--color-ink-soft)]">🔗</span>
               <motion.p
                 className="min-w-0 max-w-full overflow-hidden whitespace-nowrap text-[12.5px] font-medium text-[var(--color-ink)]"
@@ -256,7 +256,7 @@ testdart
               </motion.p>
             </div>
 
-            <div className="relative mt-2.5 flex items-center rounded-xl border border-black/10 bg-[var(--color-canvas-alt)]/40 px-3 py-2.5">
+            <div className="relative mt-2.5 flex items-center rounded-xl border border-black/10 bg-[var(--color-card-wash)]/40 px-3 py-2.5">
               <span className="mr-2 shrink-0 text-[12px] text-[var(--color-ink-soft)]">📝</span>
               <motion.p
                 className="min-w-0 max-w-full overflow-hidden whitespace-nowrap text-[12.5px] font-medium text-[var(--color-ink)]"
@@ -344,7 +344,7 @@ testdart
               return (
                 <motion.div
                   key={tc.id}
-                  className="flex items-center gap-2 rounded-xl bg-[var(--color-canvas-alt)]/60 px-3 py-2.5"
+                  className="flex items-center gap-2 rounded-xl bg-[var(--color-card-wash)]/60 px-3 py-2.5"
                   animate={{ opacity: [0, 0, 1, 1], x: [10, 10, 0, 0] }}
                   transition={{
                     duration: CYCLE,
@@ -377,7 +377,7 @@ testdart
               </span>
             </div>
 
-            <div className="mb-2.5 h-1 w-full overflow-hidden rounded-full bg-[var(--color-canvas-alt)]">
+            <div className="mb-2.5 h-1 w-full overflow-hidden rounded-full bg-[var(--color-card-wash)]">
               <motion.div
                 className="h-full rounded-full"
                 style={{ background: "var(--color-teal-500)" }}
@@ -392,7 +392,7 @@ testdart
             </div>
 
             <div className="overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm">
-              <div className="flex items-center gap-1.5 border-b border-black/5 bg-[var(--color-canvas-alt)] px-3 py-2">
+              <div className="flex items-center gap-1.5 border-b border-black/5 bg-[var(--color-card-wash)] px-3 py-2">
                 <span className="h-2 w-2 rounded-full bg-black/10" />
                 <span className="h-2 w-2 rounded-full bg-black/10" />
                 <span className="h-2 w-2 rounded-full bg-black/10" />
@@ -501,7 +501,7 @@ testdart
                 return (
                   <motion.div
                     key={stat.label}
-                    className="rounded-xl bg-[var(--color-canvas-alt)]/60 px-3 py-3.5 text-center"
+                    className="rounded-xl bg-[var(--color-card-wash)]/60 px-3 py-3.5 text-center"
                     animate={{ opacity: [0, 0, 1, 1], scale: [0.75, 0.75, 1.08, 1] }}
                     transition={{
                       duration: CYCLE,

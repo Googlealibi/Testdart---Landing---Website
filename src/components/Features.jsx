@@ -379,10 +379,10 @@ export default function Features() {
     <section id="agentic-qa" className="px-6 py-24" style={{ background: "var(--color-canvas-alt)" }}>
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-indigo-600)" }}>
+          <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-teal-400)" }}>
             Inside testdart
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">Features that power every test run</h2>
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold text-[var(--color-mist)] md:text-4xl">Features that power every test run</h2>
         </Reveal>
 
         <Reveal delay={0.1}>
@@ -391,7 +391,7 @@ export default function Features() {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            <div className="flex flex-col divide-y divide-black/5 md:order-2">
+            <div className="flex flex-col divide-y divide-[var(--color-hairline)] md:order-2">
               {items.map((item, i) => {
                 const isActive = i === active;
                 return (
@@ -403,7 +403,7 @@ export default function Features() {
                     onFocus={() => setActive(i)}
                     className="relative overflow-hidden py-4 pl-5 pr-3 text-left transition-colors first:pt-1 last:pb-1"
                     style={{
-                      background: isActive ? "color-mix(in oklch, var(--color-indigo-500) 6%, transparent)" : "transparent",
+                      background: isActive ? "var(--color-hairline-soft)" : "transparent",
                     }}
                   >
                     <span
@@ -413,18 +413,18 @@ export default function Features() {
                     <div className="flex items-start gap-3">
                       <span
                         className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors"
-                        style={{ background: isActive ? "white" : "var(--color-canvas-alt)" }}
+                        style={{ background: isActive ? "white" : "var(--color-hairline)" }}
                       >
                         <item.Icon tint={tint} />
                       </span>
                       <div>
                         <p
                           className="text-sm font-bold transition-colors"
-                          style={{ color: isActive ? "var(--color-ink)" : "var(--color-ink-soft)" }}
+                          style={{ color: isActive ? "var(--color-mist)" : "var(--color-mist-soft)" }}
                         >
                           {item.name}
                         </p>
-                        <p className="mt-1 text-xs text-[var(--color-ink-soft)]">{item.body}</p>
+                        <p className="mt-1 text-xs text-[var(--color-mist-soft)]">{item.body}</p>
                       </div>
                     </div>
                     {isActive && (
@@ -444,8 +444,8 @@ export default function Features() {
               })}
             </div>
 
-            <div className="mx-auto flex w-full max-w-sm aspect-[4/3] flex-col overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5">
-              <div className="relative flex items-center gap-1.5 overflow-hidden border-b border-black/5 bg-[var(--color-canvas-alt)] px-3 py-2">
+            <div className="mx-auto flex w-full max-w-sm aspect-[4/3] flex-col overflow-hidden rounded-2xl bg-white text-[var(--color-ink)] shadow-xl ring-1 ring-black/5">
+              <div className="relative flex items-center gap-1.5 overflow-hidden border-b border-black/5 bg-[var(--color-card-wash)] px-3 py-2">
                 <span className="h-2 w-2 rounded-full bg-black/10" />
                 <span className="h-2 w-2 rounded-full bg-black/10" />
                 <span className="h-2 w-2 rounded-full bg-black/10" />
@@ -464,7 +464,7 @@ export default function Features() {
               </div>
 
               {/* teleprompter-style roll: next item scrolls up into place, like a news ticker */}
-              <div className="relative flex flex-1 items-center justify-center overflow-hidden bg-[var(--color-canvas-alt)]/40 p-6">
+              <div className="relative flex flex-1 items-center justify-center overflow-hidden bg-[var(--color-card-wash)]/40 p-6">
                 <AnimatePresence mode="popLayout">
                   <motion.div
                     key={active}

@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 
-const tint = "var(--color-indigo-500)";
+const tint = "var(--color-teal-400)";
 
 function Counter({ value, duration = 1.4 }) {
   const match = value.match(/^([\d.]+)(.*)$/);
@@ -82,15 +82,15 @@ export default function Demo() {
     <section id="demo" className="px-6 py-24" style={{ background: "var(--color-canvas-alt)" }}>
       <div className="mx-auto max-w-5xl">
         <Reveal className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-teal-600)" }}>
+          <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--color-teal-400)" }}>
             See it in action
           </p>
-          <h2 className="mt-3 text-3xl font-bold md:text-4xl">Watch a short walkthrough before you dive in yourself.</h2>
+          <h2 className="mt-3 text-3xl font-bold text-[var(--color-mist)] md:text-4xl">Watch a short walkthrough before you dive in yourself.</h2>
         </Reveal>
 
         <div className="mt-12 grid gap-10 md:grid-cols-[220px_1fr] md:items-center">
           <motion.div
-            className="flex flex-row gap-6 divide-x divide-black/10 md:flex-col md:gap-0 md:divide-x-0 md:divide-y"
+            className="flex flex-row gap-6 divide-x divide-[var(--color-hairline)] md:flex-col md:gap-0 md:divide-x-0 md:divide-y"
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -112,7 +112,7 @@ export default function Demo() {
                   {ind.icon}
                 </motion.svg>
                 <Counter value={ind.value} duration={1.2 + i * 0.2} />
-                <p className="text-sm font-medium text-[var(--color-ink-soft)]">{ind.label}</p>
+                <p className="text-sm font-medium text-[var(--color-mist-soft)]">{ind.label}</p>
               </motion.div>
             ))}
           </motion.div>
