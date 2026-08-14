@@ -67,7 +67,9 @@ export default function StoryPricing() {
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
                   style={{
-                    background: plan.highlighted ? "var(--color-indigo-900)" : "white",
+                    background: plan.highlighted
+                      ? "linear-gradient(160deg, var(--color-teal-600), var(--color-indigo-700))"
+                      : "white",
                     color: plan.highlighted ? "white" : "var(--color-ink)",
                     borderRadius: "1.75rem",
                     outline: plan.highlighted ? "none" : "1px solid rgba(0,0,0,0.06)",
